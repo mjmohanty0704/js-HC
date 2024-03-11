@@ -1,0 +1,25 @@
+Stack memory- used in primitive datatypes
+-copy of the variable is returned
+-changes doesnt reflect in the original value
+
+let name = "mm@xyz.com";
+let anotherName = name;
+anotherName = "hello bro";
+console.log(name);
+console.log(anotherName);
+
+
+Heap memory- used in reference datatypes
+-reference to the memory location
+-changes reflect in the original value
+
+let userOne = {
+    email:"smm@abc.com",
+    upi:"user@xyz"
+};
+
+let userTwo = userOne;
+userTwo.email = "abc@efg.com";
+
+console.log(userOne.email);
+console.log(userTwo.email);
