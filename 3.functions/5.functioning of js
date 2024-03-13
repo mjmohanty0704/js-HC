@@ -1,0 +1,12 @@
+=> Javascript execution context
+1st->Global EC -> this
+2nd->Functional EC=
+    ->Memory creation phase->execution phase
+3rd->Eval EC->
+
+* 1st global execution takes place where this is automatically associated.
+* Then, memory creation phase begins. Here first variables are defined as undefined and function as defined as its definition.
+* Ater that execution phase takes place. In this the user defind values are assigned to the variables. 
+- Then for the funtion called, a new variable environment and execution thread is generated.
+- Here all the functions with the arguments are evaluated and returned back to global execution context.
+* After all these steps, the new variable environment and execution thread is deleted. 
