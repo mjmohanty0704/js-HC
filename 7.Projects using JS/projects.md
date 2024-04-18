@@ -168,3 +168,61 @@ function newGame() {
   });
 }
 ```
+
+### Project 5 - Unlimited Background Color Changer
+
+```javascript
+let intervalId;
+
+// const changeBackgroundColor = () => {
+//   const red = Math.floor(Math.random() * 256);
+//   const green = Math.floor(Math.random() * 256);
+//   const blue = Math.floor(Math.random() * 256);
+//   const randomColor = `rgb(${red}, ${green}, ${blue})`;
+//   document.body.style.backgroundColor = randomColor;
+// };
+
+const changeBackgroundColor = () => {
+  const hex = "0123456789ABCDEF";
+  let randColor = "#";
+  for (let i = 0; i < 6; i++) {
+    randColor += hex[Math.floor(Math.random() * 16)];
+  }
+  document.body.style.backgroundColor = randColor;
+};
+
+document.querySelector("#start").addEventListener("click", () => {
+  if (!intervalId) {
+    intervalId = setInterval(changeBackgroundColor, 1000);
+  }
+});
+
+document.querySelector("#stop").addEventListener("click", () => {
+  clearInterval(intervalId);
+  intervalId = null;
+});
+```
+
+### Project 6 - Keyboard Characters Number
+
+```javascript
+const insert = document.getElementById("insert");
+window.addEventListener("keydown", (e) => {
+  insert.innerHTML = `
+    <div class='color'>
+      <table>
+        <tr>
+          <th>Key</th>
+          <th>KeyCode</th>
+          <th>Code</th>
+        </tr>
+        <tr>
+          <td>${e.key === " " ? "Space" : e.key}</td>
+          <td>${e.keyCode}</td>
+          <td>${e.code}</td>
+        </tr>
+      </table>
+    </div>
+  `;
+});
+```
